@@ -2,13 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>Olympic Games</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2> Hola! daniela</h2>
+    <header >
+      <h1 id="tituloPrin">Olympic Games</h1>
+      <img id="logo" src="img/logo.png" alt="logo juegos olimpicos">
+    </header>
+    <main>
+      <section class="intro">
+       
+        <div class="contenedorParra">
+          <h2 class="tituloD">Welcome!,</h2>
+          <p class="primerParr">learn interesting facts about the athletes who participated.</p>
+        </div>
+        <img id="mascotas" src="img/mascotasju.jpg" alt="mascotas juegos olimpicos">
+       
+      </section>
+
+    </main>
+    <main>
+      <div>
+        <h2>Meet the athletes who participated</h2>
+        <select id="country">
+
+          <option value="1">Country</option>
+          
+          <option value="2">USA</option>
+          
+          <option value="3">Mexico</option>
+          
+          </select>
+          
+
+      </div>
+      <section id="atletas"></section>
+      
+    </main>
+
     <div id="root"></div>
-    <h1>hola</h1>
+    
     <script src="main.js" type="module"></script>
   </body>
 </html>
