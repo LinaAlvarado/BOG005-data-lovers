@@ -1,13 +1,14 @@
-*{padding: 0;margin: 0;}
-
+*{padding: 0;margin: 0;} */
+body{
+    
+    font-family: 'Montserrat', sans-serif;
+}
+/*Header*/
 header{
-  
-    background-color: gray;
+  background-color: white;
     height: 100px;
    /* display: flex;
     flex-flow:row nowrap ;*/
-   
-
 }
 #logo{
     height: 50px;
@@ -17,11 +18,13 @@ header{
     display: inline-block;
     padding: 25px ;
     text-align: center;
+    color: #134785;
 }
+
+/*SECCION INTRO*/
 .intro{
     display: flex;
     justify-content: space-around;
-
 }
 #mascotas{
 width: 400px;
@@ -30,3 +33,27 @@ width: 400px;
     margin:auto 0;
 }
 
+/*Contenido Atletas*/
+
+
+#atletas{
+    padding: 30px;
+    background-color: #134785;
+    color: white;
+}
+.tituloD{
+color: #134785;
+}
+.primerParr{
+color: #134785;
+}
+hr{
+    padding: 0;
+}
+p{
+    display: inline-block;
+    margin:10px 40px;
+}
+input{
+
+}
