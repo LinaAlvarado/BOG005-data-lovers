@@ -1,17 +1,9 @@
 //import  from "./data.js";
 import {
-  filtradoEquipo,
-  filtradoDeporte,
-  filtradoGenero,
-  filtradoMedalleria,
+  filtrado
 } from "./data.js";
 import olymGam from "./data/athletes/athletes.js";
 import data from "./data/athletes/athletes.js";
-
-const inputCountry = document.getElementById("country");
-const inputSport = document.getElementById("sport");
-const inputGender = document.getElementById("gender");
-const inputMedal = document.getElementById("medal");
 
 // Carga el dom
 window.addEventListener("DOMContentLoaded", () => {
@@ -20,57 +12,56 @@ window.addEventListener("DOMContentLoaded", () => {
   visual(olymGam.athletes);
   console.log("loaded");
 });
-// evento: capturar lo que el usuario escribe
-inputCountry.addEventListener("keyup", () => {
-  // llamar la funcion filtrar
-  // llamar la funcion de pintado con el resultado anterior
-  // pintarAtletas(filtrados)
-  //let prueba = "";
-  let prueba = "";
-  prueba = filtradoEquipo(olymGam.athletes, inputCountry.value);
-  visual();
 
-  //console.log(inputCountry.value);
-  //console.log(filtradoEquipo(olymGam.athletes, inputCountry.value));
-  console.log(prueba);
-});
-inputSport.addEventListener("keyup", () => {
-  // llamar la funcion filtrar
-  // llamar la funcion de pintado con el resultado anterior
-  // pintarAtletas(filtrados)
-  let prueba = "";
-  prueba = filtradoDeporte(olymGam.athletes, inputSport.value);
-  visual();
 
-  //console.log(inputCountry.value);
-  //console.log(filtradoEquipo(olymGam.athletes, inputCountry.value));
-  console.log(prueba);
 
-  console.log(inputSport.value);
-});
-inputGender.addEventListener("change", () => {
-  //revisar el evento
-  // llamar la funcion filtrar
-  // llamar la funcion de pintado con el resultado anterior
-  // pintarAtletas(filtrados)
-  let prueba = "";
-  prueba = filtradoGenero(olymGam.athletes, inputGender.value);
-  visual();
-  console.log(prueba);
-  console.log(inputGender.value);
+const boton= document.getElementById("filtrarBoton");
+
+boton.addEventListener("click",()=>{
+const inputCountry = document.getElementById("country").value;
+const inputSport = document.getElementById("sport").value;
+const inputGender = document.getElementById("gender").value;
+const inputMedal = document.getElementById("medal").value;
+let dataActual=data.athletes;
+console.log(dataActual)
+
+if( inputCountry !== ""){
+  dataActual=filtrado(dataActual, inputCountry, "team")
+  console.log(dataActual)
+}
+
+if( inputSport !== ""){
+  dataActual=filtrado(dataActual, inputSport, "sport")
+  console.log(dataActual)
+}
+if( inputGender !== ""){
+  dataActual=filtrado(dataActual, inputGender, "gender")
+  console.log(dataActual)
+}
+if( inputMedal !== ""){
+  dataActual=filtrado(dataActual, inputMedal, "medal")
+  console.log(dataActual)
+}
+
+let contenedor=document.getElementById("atletas");
+let datosFiltrados="";
+for(let cont of dataActual){
+  datosFiltrados += `<article id="contenido">
+  <p>${cont.name}</p>
+  <p>  ${cont.team}</p>
+  <p>  ${cont.gender}</p>
+  <p>  ${cont.sport}</p>
+  <p>  ${cont.medal}</p>
+  <hr id="linea">
+
+</article>`;
+contenedor.innerHTML= datosFiltrados;
+}
+
 });
 
-inputMedal.addEventListener("change", () => {
-  //revisar el evento
-  // llamar la funcion filtrar
-  // llamar la funcion de pintado con el resultado anterior
-  // pintarAtletas(filtrados)
-  let prueba = "";
-  prueba = filtradoMedalleria(olymGam.athletes, inputMedal.value);
-  visual();
-  console.log(prueba);
-  console.log(inputMedal.value);
-});
+
+ 
 
 function visual() {
   let atletasContenedor = document.getElementById("atletas");
@@ -98,19 +89,13 @@ function visual() {
       </article>`;
     // atletasContenedor.innerHTML += atleta.name;
 
-    //  = Object.values(
-    //   olymGam.athletes[prop]
-    // );
+   
   }
   atletasContenedor.innerHTML = atletas;
 }
 
-// console.log(olymGam.athletes);
 
 console.log(
-  filtradoEquipo,
-  filtradoDeporte,
-  filtradoGenero,
-  filtradoMedalleria,
+  filtrado,
   data
 );
