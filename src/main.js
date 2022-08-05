@@ -1,5 +1,10 @@
 //import  from "./data.js";
-import { filtradoEquipo } from "./data.js";
+import {
+  filtradoEquipo,
+  filtradoDeporte,
+  filtradoGenero,
+  filtradoMedalleria,
+} from "./data.js";
 import olymGam from "./data/athletes/athletes.js";
 import data from "./data/athletes/athletes.js";
 
@@ -20,14 +25,26 @@ inputCountry.addEventListener("keyup", () => {
   // llamar la funcion filtrar
   // llamar la funcion de pintado con el resultado anterior
   // pintarAtletas(filtrados)
+  //let prueba = "";
+  let prueba = "";
+  prueba = filtradoEquipo(olymGam.athletes, inputCountry.value);
+  visual();
 
-  console.log(inputCountry.value);
-  console.log(filtradoEquipo(olymGam.athletes, inputCountry.value));
+  //console.log(inputCountry.value);
+  //console.log(filtradoEquipo(olymGam.athletes, inputCountry.value));
+  console.log(prueba);
 });
 inputSport.addEventListener("keyup", () => {
   // llamar la funcion filtrar
   // llamar la funcion de pintado con el resultado anterior
   // pintarAtletas(filtrados)
+  let prueba = "";
+  prueba = filtradoDeporte(olymGam.athletes, inputSport.value);
+  visual();
+
+  //console.log(inputCountry.value);
+  //console.log(filtradoEquipo(olymGam.athletes, inputCountry.value));
+  console.log(prueba);
 
   console.log(inputSport.value);
 });
@@ -36,7 +53,10 @@ inputGender.addEventListener("change", () => {
   // llamar la funcion filtrar
   // llamar la funcion de pintado con el resultado anterior
   // pintarAtletas(filtrados)
-
+  let prueba = "";
+  prueba = filtradoGenero(olymGam.athletes, inputGender.value);
+  visual();
+  console.log(prueba);
   console.log(inputGender.value);
 });
 
@@ -45,7 +65,10 @@ inputMedal.addEventListener("change", () => {
   // llamar la funcion filtrar
   // llamar la funcion de pintado con el resultado anterior
   // pintarAtletas(filtrados)
-
+  let prueba = "";
+  prueba = filtradoMedalleria(olymGam.athletes, inputMedal.value);
+  visual();
+  console.log(prueba);
   console.log(inputMedal.value);
 });
 
@@ -84,4 +107,10 @@ function visual() {
 
 // console.log(olymGam.athletes);
 
-console.log(filtrado, data);
+console.log(
+  filtradoEquipo,
+  filtradoDeporte,
+  filtradoGenero,
+  filtradoMedalleria,
+  data
+);
