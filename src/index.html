@@ -4,8 +4,8 @@
 <head>
   <link rel="icon" href="img/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/> -->
   <meta charset="utf-8">
   <title>Olympic Games</title>
   <link rel="stylesheet" href="style.css" />
@@ -14,8 +14,9 @@
 <body>
 
   <header>
-    <h1 id="tituloPrin">Olympic Games</h1>
     <img id="logo" src="img/logo.png" alt="logo juegos olimpicos">
+    <h1 id="tituloPrin">Olympic Games</h1>
+    
   </header>
 
   <main>
@@ -23,8 +24,9 @@
       <div class="contenedorParra">
         <h2 class="tituloD">Welcome!</h2>
         <p class="primerParr">Learn interesting facts about the athletes who participated.</p>
+        <img class="fondo-foto" src="img/fondopag.png" alt="fondo">
       </div>
-      <img id="mascotas" src="img/mascotasju.jpg" alt="mascotas juegos olimpicos">
+      
     </section>
 
   <section id="Statistics">
@@ -35,6 +37,7 @@
   
     <div id="cInput">
       <h2>Meet the athletes who participated</h2>
+     
       <input type="text" placeholder="Write the country" id="country" />
       <input type="text" placeholder="Write the sport" id="sport" />
       <select name="gender" id="gender" placeholder="Gender">
@@ -47,7 +50,15 @@
         <option value="Gold">Gold</option>
         <option value="Silver">Silver</option>
         <option value="Bronze">Bronze</option>
-      </select>  
+      </select> 
+      
+    <button id="filtrarBoton"> Filtrar </button>
+
+    <select id="ordenar"> 
+      <option value=""> Ordenar</option>
+      <option value=""> De la A-Z</option>
+      <option value=""> De la Z-A</option>
+    </select>
     </div>
     <section id="atletas"></section>
     

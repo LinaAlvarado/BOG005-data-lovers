@@ -1,17 +1,20 @@
-*{padding: 0;margin: 0;} */
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap);
+*{padding: 0;margin: 0;} 
+
 body{
     font-family: 'Montserrat', sans-serif;
 }
-/*Header*/
+/*HEADER*/
 header{
-  background-color: white;
-    height: 100px;
-   /* display: flex;
-    flex-flow:row nowrap ;*/
+background-color: rgb(255, 255, 255);
+height: 100px;
+display: flex;
+flex-flow:row nowrap ;
+justify-content:space-between;
 }
 #logo{
     height: 50px;
-    margin: 5px;
+    margin:20px;
 }
 #tituloPrin{
     display: inline-block;
@@ -22,15 +25,25 @@ header{
 
 /*SECCION INTRO*/
 .intro{
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
+    
+    width: 100%;
+    height: 300px;
 }
+
+.fondo-foto{
+width: 100%;
+height: 300px;;
+}
+
 #mascotas{
 width: 500px;
 }
 .contenedorParra{
     margin:auto 0;
 }
+
 
 /*Contenido Atletas*/
 
@@ -41,7 +54,7 @@ width: 500px;
     color: white;
 }
 .tituloD{
-color: #134785;
+color:#134785;
 }
 .primerParr{
 color: #134785;
