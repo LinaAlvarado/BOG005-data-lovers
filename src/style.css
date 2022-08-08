@@ -50,8 +50,11 @@ width: 500px;
 
 #atletas{
     padding: 30px;
-    background-color: #134785;
-    color: white;
+    background-color: #4183d3;
+    color: #ffffff;
+  
+    
+   
 }
 .tituloD{
 color:#134785;
@@ -64,8 +67,38 @@ hr{
 }
 p{
     display: inline-block;
-    margin:10px 40px;
+    
 }
 input{
+
+}
+
+#contenido{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   justify-items: stretch;
+   align-items: center;
+    grid-column-gap: 100px;
+    grid-row-gap: 30px
+}
+
+#linea{
+    display: none;
+}
+
+#tituloTabla{
+    background-color:#134785;
+    color: #ffffff;
+    padding: 30PX;
+    display: grid;
+    /* grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-column-gap: 100px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    font-weight: bolder;
+    font-size:18px;
+}
+
+select, input{
 
 }
