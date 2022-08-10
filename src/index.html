@@ -17,9 +17,8 @@
 <body>
 
   <header>
-    <img id="logo" src="img/logo.png" alt="logo juegos olimpicos">
+     <img id="logo" src="img/logo.png" alt="logo juegos olimpicos"> 
     <h1 id="tituloPrin">Olympic Games</h1>
-    
   </header>
 
   <main>
@@ -27,33 +26,34 @@
       <div class="contenedorParra">
         <h2 class="tituloD">Welcome!</h2>
         <p class="primerParr">Learn interesting facts about the athletes who participated.</p>
-        <img class="fondo-foto" src="img/fondopag.png" alt="fondo">
+        <!-- <img class="fondo-foto" src="img/fondopag.png" alt="fondo"> -->
       </div>
     </section>
 
-  <section id="Statistics">
+  <!-- <section id="Statistics">
 <h2>Statistics</h2>
 <p>(resultados )</p>
-  </section>
+  </section> -->
 
   
     <div id="cInput">
-      <h2>Meet the athletes who participated</h2>
-     
+      <h2 class="tituloAtletas">Meet the athletes who participated</h2>
+     <div class="selectores">
       <input type="text" placeholder="Write the country" id="country" />
-      <input type="text" placeholder="Write the sport" id="sport" />
       <select name="gender" id="gender" placeholder="Gender">
         <option value="">Gender</option>
         <option value="M">M</option>
         <option value="F">F</option>
       </select>
+      <input type="text" placeholder="Write the sport" id="sport" />
       <select name="medal" id="medal">
         <option value="">Medal</option>
         <option value="Gold">Gold</option>
         <option value="Silver">Silver</option>
         <option value="Bronze">Bronze</option>
       </select> 
-      
+    </div>
+      <div class="botones">
     <button id="filtrarBoton"> Filtrar </button>
 
     <select id="ordenar"> 
@@ -61,6 +61,7 @@
       <option value="menor"> De la A-Z</option>
       <option value="mayor"> De la Z-A</option>
     </select>
+  </div>
     </div>
 
     <article id="tituloTabla">

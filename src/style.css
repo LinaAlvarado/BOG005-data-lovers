@@ -1,49 +1,116 @@
+/*
+posicionamiento 
+modelo caja
+tipografia
+visuales 
+otros
+*/
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap);
-*{padding: 0;margin: 0;} 
+:root{
+   --Azul-encabezado: #051830;
+   --Azul-titulo:#134785;
+   --Azul-contenido: #4183D3;
+   --Blanco: #FFFFFF;  
+}
+ *{box-sizing: border-box;
+    padding: 0;
+    margin: 0;} 
 
-body{
+html{
+    font-size: 62.5%;
     font-family: 'Montserrat', sans-serif;
 }
+
 /*HEADER*/
 header{
 background-color: rgb(255, 255, 255);
-height: 100px;
-display: flex;
+width:100% ;
+ display: flex;
 flex-flow:row nowrap ;
 justify-content:space-between;
+align-items: center; 
 }
-#logo{
-    height: 50px;
+ #logo{
+    height: 30px;
     margin:20px;
-}
+} 
 #tituloPrin{
     display: inline-block;
     padding: 25px ;
     text-align: center;
     color: #134785;
+    font-size: 17px;
 }
 
 /*SECCION INTRO*/
 .intro{
-    /* display: flex;
-    justify-content: space-around; */
-    
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 300px;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    /* background-image:url(img/fondopag.png); */
 }
 
-.fondo-foto{
-width: 100%;
-height: 300px;;
-}
+.tituloD{
+    color:var(--Azul-contenido);
+    z-index: 1;
+    }
+    .primerParr{
+    color:var(--Azul-contenido);
+    z-index: 1;
+    }
+/* SECCION INPUT */
 
-#mascotas{
-width: 500px;
+#cInput{
+    background-color: var(--Azul-encabezado);
+    height: 200px;
+    color: var(--Blanco);
 }
-.contenedorParra{
-    margin:auto 0;
-}
+input,select{
+    background-color: var(--Azul-encabezado);
+    border-radius: 6px;
+    border: 1px solid var(--Blanco);
+    padding: 5px 10px;
+    color: var(--Blanco);
 
+}
+::placeholder{
+    color: var(--Blanco);
+}
+#filtrarBoton{
+    background-color: var(--Azul-contenido);
+    border-radius: 6px;
+    padding: 7px 25px;
+    border: none;
+}
+ /* #filtrarBoton:hover{
+    background-color: #8fbaee;
+}  */
+.tituloAtletas{
+    text-align: center;
+    padding: 15px;
+}
+.selectores{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; 
+    align-items: center;
+    /* margin: 20px; */
+    padding: 10px;
+}
+.botones{
+     display: flex;
+    flex-flow: row wrap;
+      justify-content: center; 
+    /*align-items: center;
+     align-self: center; 
+    align-content: center;   */
+    
+}
 
 /*Contenido Atletas*/
 
@@ -56,12 +123,7 @@ width: 500px;
     
    
 }
-.tituloD{
-color:#134785;
-}
-.primerParr{
-color: #134785;
-}
+
 hr{
     padding: 0;
 }
@@ -91,14 +153,11 @@ input{
     color: #ffffff;
     padding: 30PX;
     display: grid;
-    /* grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-column-gap: 100px; */
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-column-gap: 100px; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 100px;
     font-weight: bolder;
     font-size:18px;
 }
 
-select, input{
-
-}
