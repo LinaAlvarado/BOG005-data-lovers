@@ -25,21 +25,21 @@ html{
 header{
 background-color: rgb(255, 255, 255);
 width:100% ;
- display: flex;
+display: flex;
 flex-flow:row nowrap ;
 justify-content:space-between;
 align-items: center; 
 }
- #logo{
+  #logo{
     height: 30px;
     margin:20px;
-} 
+}  
 #tituloPrin{
     display: inline-block;
     padding: 25px ;
     text-align: center;
     color: #134785;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 /*SECCION INTRO*/
@@ -52,16 +52,19 @@ align-items: center;
     min-width: 320px;
     height: 334px;
     text-align: center;
-    /* background-image:url(img/fondopag.png); */
+    background-image: url("img/fondopag.png");
+    
 }
 
 .tituloD{
-    color:var(--Azul-contenido);
+    color:var(--Blanco);
     z-index: 1;
+    font-size: 18px;
     }
     .primerParr{
-    color:var(--Azul-contenido);
+    color:var(--Blanco);
     z-index: 1;
+    font-size: 17px;
     }
 /* SECCION INPUT */
 
@@ -69,6 +72,7 @@ align-items: center;
     background-color: var(--Azul-encabezado);
     height: 200px;
     color: var(--Blanco);
+    
 }
 input,select{
     background-color: var(--Azul-encabezado);
@@ -76,7 +80,12 @@ input,select{
     border: 1px solid var(--Blanco);
     padding: 5px 10px;
     color: var(--Blanco);
-
+}
+.fondo-foto{
+    width: 100%;
+    min-width: 320px;
+    max-width: 1440px;
+    height: 200px;
 }
 ::placeholder{
     color: var(--Blanco);
@@ -87,9 +96,7 @@ input,select{
     padding: 7px 25px;
     border: none;
 }
- /* #filtrarBoton:hover{
-    background-color: #8fbaee;
-}  */
+
 .tituloAtletas{
     text-align: center;
     padding: 15px;
@@ -99,16 +106,13 @@ input,select{
     flex-flow: row wrap;
     justify-content: center; 
     align-items: center;
-    /* margin: 20px; */
     padding: 10px;
 }
 .botones{
      display: flex;
     flex-flow: row wrap;
       justify-content: center; 
-    /*align-items: center;
-     align-self: center; 
-    align-content: center;   */
+   
     
 }
 
@@ -118,46 +122,50 @@ input,select{
 #atletas{
     padding: 30px;
     background-color: #4183d3;
-    color: #ffffff;
-  
-    
-   
+    color: var(--Blanco);
+    font-weight: bolder;   
 }
 
 hr{
     padding: 0;
 }
 p{
-    display: inline-block;
+    display: block;
     
 }
 input{
 
 }
 
-#contenido{
+/* #contenido{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    justify-items: stretch;
    align-items: center;
-    grid-column-gap: 100px;
+    grid-column-gap: 7%;
     grid-row-gap: 30px
-}
+}*/
 
-#linea{
-    display: none;
-}
-
-#tituloTabla{
+ #tituloTabla{
     background-color:#134785;
-    color: #ffffff;
+    color: var(--Blanco);
     padding: 30PX;
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-column-gap: 100px; 
+    display: none;
+    grid-column-gap: 7%; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 100px;
     font-weight: bolder;
-    font-size:18px;
-}
+    font-size: 12px;
+}  
+
+/* #tituloTabla{
+    background-color:#134785;
+    color: var(--Blanco);
+    padding: 30PX;
+    display: block;
+    font-weight: bolder;
+    font-size: 12px;
+} */
+.nombre{
+    font-size: 15px;
+} 
 

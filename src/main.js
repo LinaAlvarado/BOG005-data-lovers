@@ -59,12 +59,13 @@ boton.addEventListener("click", () => {
     let datosFiltrados = "";
     for (let cont of dataActual) {
       datosFiltrados += `<article id="contenido">
-  <p>${cont.name}</p>
+  <p class="nombre">${cont.name}</p>
   <p>  ${cont.team}</p>
   <p>  ${cont.gender}</p>
   <p>  ${cont.sport}</p>
   <p>  ${cont.medal}</p>
   <hr>
+  
 
 </article>`;
       contenedor.innerHTML = datosFiltrados;
@@ -74,12 +75,13 @@ boton.addEventListener("click", () => {
   let datosFiltrados = "";
   for (let cont of dataActual) {
     datosFiltrados += `<article id="contenido">
-  <p>${cont.name}</p>
+  <p class="nombre">${cont.name}</p>
   <p>  ${cont.team}</p>
   <p>  ${cont.gender}</p>
   <p>  ${cont.sport}</p>
   <p>  ${cont.medal}</p>
- <hr>
+  <hr>
+ 
 
 </article>`;
     contenedor.innerHTML = datosFiltrados;
@@ -129,16 +131,12 @@ function visual() {
 
     //   ************ template string && interpolacion de variables
     atletas += `<article id="contenido">
-        <p>${atleta.name}</p>
-  
+        <p class="nombre">${atleta.name}</p>
         <p>  ${atleta.team}</p>
-  
         <p>  ${atleta.gender}</p>
-  
         <p>  ${atleta.sport}</p>
-  
         <p>  ${atleta.medal}</p>
-        <hr id="linea">
+        <hr>
         <img src="" alt="" srcset="">
       </article>`;
     // atletasContenedor.innerHTML += atleta.name;
