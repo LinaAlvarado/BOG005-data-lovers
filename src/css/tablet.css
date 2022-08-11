@@ -1,0 +1,34 @@
+header{
+    background-color: rgb(255, 255, 255);
+    width:100% ;
+    text-align: center;
+    }
+ #logo{
+    height: 40px;
+    margin:20px;
+}  
+#tituloPrin{
+    display: inline-block; 
+    padding: 0 auto;
+    text-align: center;
+    color: #134785;
+    font-size: 25px;
+}
+#contenido{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   justify-items: stretch;
+   align-items: center;
+    grid-column-gap: 7%;
+    grid-row-gap: 30px
+}
+#tituloTabla{
+    background-color:#134785;
+    color: var(--Blanco);
+    padding: 30PX;
+    display: grid;
+    grid-column-gap: 7%; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-weight: bolder;
+    font-size: 12px;
+}  
