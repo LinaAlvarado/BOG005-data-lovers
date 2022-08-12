@@ -1,7 +1,7 @@
-import { filtrado } from "../src/data.js";
+import { filtrado, ordenar } from "../src/data.js";
 import dataMock from "./datamock.js";
 
-describe("example", () => {
+describe("Test funcion filtrar", () => {
   // FN FILTRADO
   it("filtrado es una funcion", () => {
     expect(typeof filtrado).toBe("function");
@@ -36,7 +36,7 @@ describe("example", () => {
     ]);
   });
 
-  it.only("Si no existe atleta del pais indicado, retorna un arreglo vacio", () => {
+  it("Si no existe atleta del pais indicado, retorna un arreglo vacio", () => {
     const data = [
       {
         name: "Luc Abalo",
@@ -54,17 +54,132 @@ describe("example", () => {
     expect(filtrado(data, "Colombia", "team")).toStrictEqual([]);
   });
 
-  it.skip("returns `example`", () => {
-    expect(filtrado()).toBe("example");
+  it("filtra el array segun el deporte indicado", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+        sport: "Handball",
+      },
+      {
+        name: "Patimat Abakarova",
+        sport: "Taekwondo",
+      },
+      {
+        name: "Giovanni Abagnale",
+        sport: "Rowing",
+      },
+    ];
+    expect(filtrado(data, "Handball", "sport")).toStrictEqual([
+      {
+        name: "Luc Abalo",
+        sport: "Handball",
+      },
+    ]);
+  });
+
+  it("filtra el array segun el genero", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+        gender: "M",
+      },
+      {
+        name: "Patimat Abakarova",
+        gender: "F",
+      },
+      {
+        name: "Giovanni Abagnale",
+        gender: "M",
+      },
+    ];
+    expect(filtrado(data, "F", "gender")).toStrictEqual([
+      {
+        name: "Patimat Abakarova",
+        gender: "F",
+      },
+    ]);
+  });
+
+  it("filtra el array segun el medallero", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+        medal: "Silver",
+      },
+      {
+        name: "Patimat Abakarova",
+        medal: "Bronze",
+      },
+      {
+        name: "Giovanni Abagnale",
+        medal: "Bronze",
+      },
+    ];
+    expect(filtrado(data, "Bronze", "medal")).toStrictEqual([
+      { name: "Patimat Abakarova", medal: "Bronze" },
+      {
+        name: "Giovanni Abagnale",
+        medal: "Bronze",
+      },
+    ]);
   });
 });
 
-// describe("anotherExample", () => {
-//   it("is a function", () => {
-//     expect(typeof anotherExample).toBe("function");
-//   });
-
-//   it("returns `anotherExample`", () => {
-//     expect(anotherExample()).toBe("OMG");
-//   });
+// it.skip("returns `example`", () => {
+//   expect(filtrado()).toBe("example");
 // });
+
+describe("Test funcion ordenar", () => {
+  it("ordenar es una funcion", () => {
+    expect(typeof ordenar).toBe("function");
+  });
+
+  it("ordena de la A a Z", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+      },
+      {
+        name: "Patimat Abakarova",
+      },
+      {
+        name: "Giovanni Abagnale",
+      },
+    ];
+    expect(ordenar(data, "menor")).toStrictEqual([
+      {
+        name: "Giovanni Abagnale",
+      },
+      {
+        name: "Luc Abalo",
+      },
+      {
+        name: "Patimat Abakarova",
+      },
+    ]);
+  });
+  it("ordena de la Z a A", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+      },
+      {
+        name: "Patimat Abakarova",
+      },
+      {
+        name: "Giovanni Abagnale",
+      },
+    ];
+    expect(ordenar(data, "mayor")).toStrictEqual([
+      {
+        name: "Patimat Abakarova",
+      },
+      {
+        name: "Luc Abalo",
+      },
+      {
+        name: "Giovanni Abagnale",
+      },
+    ]);
+  });
+});

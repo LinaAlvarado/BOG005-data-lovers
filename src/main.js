@@ -13,12 +13,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let dataActual = data.athletes;
     const inputValor = inputOrder.value;
     dataActual = ordenar(dataActual, inputValor);
-    console.log(ordenar(dataActual, inputValor));
-    console.log(inputValor);
+    //console.log(ordenar(dataActual, inputValor));
+    //console.log(inputValor);
     visual(dataActual);
   });
 
-  console.log("loaded");
+  //console.log("loaded");
 });
 
 const boton = document.getElementById("filtrarBoton");
@@ -29,30 +29,30 @@ boton.addEventListener("click", () => {
   const inputGender = document.getElementById("gender").value;
   const inputMedal = document.getElementById("medal").value;
   let dataActual = data.athletes;
-  console.log(dataActual);
+  //console.log(dataActual);
 
   if (inputCountry !== "") {
     dataActual = filtrado(dataActual, inputCountry, "team");
-    console.log(dataActual);
+    //console.log(dataActual);
   }
 
   if (inputSport !== "") {
     dataActual = filtrado(dataActual, inputSport, "sport");
-    console.log(dataActual);
+    //console.log(dataActual);
   }
   if (inputGender !== "") {
     dataActual = filtrado(dataActual, inputGender, "gender");
-    console.log(dataActual);
+    //console.log(dataActual);
   }
   if (inputMedal !== "") {
     dataActual = filtrado(dataActual, inputMedal, "medal");
-    console.log(dataActual);
+    //console.log(dataActual);
   }
 
   const inputOrder = document.getElementById("ordenar");
   inputOrder.addEventListener("change", () => {
     const inputValor = inputOrder.value;
-    console.log(ordenar(dataActual, inputValor));
+    //console.log(ordenar(dataActual, inputValor));
     dataActual = ordenar(dataActual, inputValor);
 
     let contenedor = document.getElementById("atletas");
@@ -64,10 +64,7 @@ boton.addEventListener("click", () => {
   <p>  ${cont.gender}</p>
   <p>  ${cont.sport}</p>
   <p>  ${cont.medal}</p>
-  <hr>
-  
-
-</article>`;
+</article> <hr>`;
       contenedor.innerHTML = datosFiltrados;
     }
   });
@@ -80,10 +77,7 @@ boton.addEventListener("click", () => {
   <p>  ${cont.gender}</p>
   <p>  ${cont.sport}</p>
   <p>  ${cont.medal}</p>
-  <hr>
- 
-
-</article>`;
+</article><hr>`;
     contenedor.innerHTML = datosFiltrados;
   }
 });
@@ -138,19 +132,10 @@ function visual() {
         <p>  ${atleta.medal}</p>
         
         <img src="" alt="" srcset="">
-      </article><hr>`;
-    // atletasContenedor.innerHTML += atleta.name;
+      </article>
+      <hr>`;
   }
   atletasContenedor.innerHTML = atletas;
 }
 
-console.log(filtrado, ordenar, data);
-// console.log(atleta);
-//   ************ MANIPULACION DINAMICA DEL DOM
-// const p = document.createElement("p");
-// const article = document.createElement("article");
-// p.innerText = atleta.name;
-// article.appendChild(p);
-// atletasContenedor.append(article);
-
-//   ************ template string && interpolacion de variables
+//console.log(filtrado, ordenar, data);
