@@ -13,6 +13,47 @@ describe("example", () => {
     ).toStrictEqual(dataMock.returnFiltrado);
   });
 
+  it("filtra el array segun el pais indicado", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+        team: "France",
+      },
+      {
+        name: "Patimat Abakarova",
+        team: "Azerbaijan",
+      },
+      {
+        name: "Giovanni Abagnale",
+        team: "Italy",
+      },
+    ];
+    expect(filtrado(data, "Italy", "team")).toStrictEqual([
+      {
+        name: "Giovanni Abagnale",
+        team: "Italy",
+      },
+    ]);
+  });
+
+  it.only("Si no existe atleta del pais indicado, retorna un arreglo vacio", () => {
+    const data = [
+      {
+        name: "Luc Abalo",
+        team: "France",
+      },
+      {
+        name: "Patimat Abakarova",
+        team: "Azerbaijan",
+      },
+      {
+        name: "Giovanni Abagnale",
+        team: "Italy",
+      },
+    ];
+    expect(filtrado(data, "Colombia", "team")).toStrictEqual([]);
+  });
+
   it.skip("returns `example`", () => {
     expect(filtrado()).toBe("example");
   });

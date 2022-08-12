@@ -136,9 +136,9 @@ function visual() {
         <p>  ${atleta.gender}</p>
         <p>  ${atleta.sport}</p>
         <p>  ${atleta.medal}</p>
-        <hr>
+        
         <img src="" alt="" srcset="">
-      </article>`;
+      </article><hr>`;
     // atletasContenedor.innerHTML += atleta.name;
   }
   atletasContenedor.innerHTML = atletas;
