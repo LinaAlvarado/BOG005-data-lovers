@@ -16,6 +16,7 @@ header{
 }
 #contenido{
     display: grid;
+    font-size: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    justify-items: stretch;
    align-items: center;
@@ -30,5 +31,26 @@ header{
     grid-column-gap: 7%; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     font-weight: bolder;
-    font-size: 12px;
+    font-size: 15px;
 }  
+
+.selectores {
+    display: flex;
+    width: 80%;
+    flex-flow: row wrap;
+    /* justify-content: center;  */
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px; */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+  }
+  .botones {
+    display: flex;
+    width: 30%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top:10px;
+    align-self: center;
+  }

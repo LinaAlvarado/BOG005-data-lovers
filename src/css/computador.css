@@ -1,0 +1,101 @@
+header{
+    background-color: rgb(255, 255, 255);
+    width:100% ;
+    text-align: center;
+    }
+#logo{
+    height: 40px;
+    margin:20px;
+}  
+#tituloPrin{
+    display: inline-block; 
+    /* padding: 0 auto; */
+    text-align: center;
+    color: #134785;
+    font-size: 25px;
+    padding-right: 40px;
+}
+.tituloD{
+    color:var(--Blanco);
+    z-index: 1;
+    font-size: 25px;
+    }
+
+.primerParr{
+    color:var(--Blanco);
+    z-index: 1;
+    font-size: 17px;
+    }
+
+.tituloAtletas{
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+}
+#contenido{
+    display: grid;
+    font-size: 18px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: stretch;
+    align-items: center;
+    grid-column-gap: 7%;
+    grid-row-gap: 30px
+}
+.nombre{
+    font-size: 18px;
+} 
+
+#tituloTabla{
+    background-color:#134785;
+    color: var(--Blanco);
+    padding: 30PX;
+    display: grid;
+    grid-column-gap: 7%; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-weight: bolder;
+    font-size: 20px;
+}  
+
+.selectores {
+    display: flex;
+    width: 60%;
+    flex-flow: row wrap;
+    /* justify-content: center;  */
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px; */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+  }
+  .botones {
+    display: flex;
+    width: 20%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top:10px;
+    align-self: center;
+  }
+
+@media(min-width: 1440px) and (max-width: 2000px){
+    .selectores {
+        display: flex;
+        width: 45%;
+        flex-flow: row wrap;
+        /* justify-content: center;  */
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 10px; */
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 10px;
+      }
+      .botones {
+        display: flex;
+        width: 15%;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding-top:10px;
+        align-self: center;
+      }
+}
