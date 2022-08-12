@@ -64,10 +64,7 @@ boton.addEventListener("click", () => {
   <p>  ${cont.gender}</p>
   <p>  ${cont.sport}</p>
   <p>  ${cont.medal}</p>
-  <hr>
-  
-
-</article>`;
+</article> <hr>`;
       contenedor.innerHTML = datosFiltrados;
     }
   });
@@ -80,10 +77,7 @@ boton.addEventListener("click", () => {
   <p>  ${cont.gender}</p>
   <p>  ${cont.sport}</p>
   <p>  ${cont.medal}</p>
-  <hr>
- 
-
-</article>`;
+</article><hr>`;
     contenedor.innerHTML = datosFiltrados;
   }
 });
@@ -136,9 +130,10 @@ function visual() {
         <p>  ${atleta.gender}</p>
         <p>  ${atleta.sport}</p>
         <p>  ${atleta.medal}</p>
-        <hr>
+        
         <img src="" alt="" srcset="">
-      </article>`;
+      </article>
+      <hr>`;
     // atletasContenedor.innerHTML += atleta.name;
   }
   atletasContenedor.innerHTML = atletas;

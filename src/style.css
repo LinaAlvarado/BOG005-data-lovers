@@ -6,135 +6,142 @@ visuales
 otros
 */
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap);
-:root{
-   --Azul-encabezado: #051830;
-   --Azul-titulo:#134785;
-   --Azul-contenido: #4183D3;
-   --Blanco: #FFFFFF;  
+:root {
+  --Azul-encabezado: #051830;
+  --Azul-titulo: #134785;
+  --Azul-contenido: #4183d3;
+  --Blanco: #ffffff;
 }
- *{box-sizing: border-box;
-    padding: 0;
-    margin: 0;} 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-html{
-    font-size: 62.5%;
-    font-family: 'Montserrat', sans-serif;
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
 }
 
 /*HEADER*/
-header{
-background-color: rgb(255, 255, 255);
-width:100% ;
-display: flex;
-flex-flow:row nowrap ;
+header {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex; 
 justify-content:space-between;
 align-items: center; 
 }
-  #logo{
-    height: 30px;
-    margin:20px;
-}  
-#tituloPrin{
-    display: inline-block;
-    padding: 25px ;
-    text-align: center;
-    color: #134785;
-    font-size: 18px;
+#logo {
+  height: 30px;
+  /* margin:20px; */
+  margin: 0;
+}
+#tituloPrin {
+  display: inline-block;
+  padding: 25px;
+  text-align: center;
+  color: #134785;
+  font-size: 18px;
 }
 
 /*SECCION INTRO*/
-.intro{
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    min-width: 320px;
-    height: 334px;
-    text-align: center;
-    background-image: url("img/fondopag.png");
-    
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 320px;
+  height: 334px;
+  text-align: center;
+  background-image: url("img/fondopag.png");
 }
 
-.tituloD{
-    color:var(--Blanco);
-    z-index: 1;
-    font-size: 18px;
-    }
-    .primerParr{
-    color:var(--Blanco);
-    z-index: 1;
-    font-size: 17px;
-    }
+.tituloD {
+  color: var(--Blanco);
+  z-index: 1;
+  font-size: 18px;
+}
+.primerParr {
+  color: var(--Blanco);
+  z-index: 1;
+  font-size: 17px;
+}
 /* SECCION INPUT */
 
-#cInput{
-    background-color: var(--Azul-encabezado);
-    height: 200px;
-    color: var(--Blanco);
-    
+#cInput {
+    display: flex;
+    flex-direction: column;
+  background-color: var(--Azul-encabezado);
+  height: 200px;
+  color: var(--Blanco);
+  align-items: center;
+  justify-content: center;
 }
-input,select{
-    background-color: var(--Azul-encabezado);
-    border-radius: 6px;
-    border: 1px solid var(--Blanco);
-    padding: 5px 10px;
-    color: var(--Blanco);
+input,
+select {
+  background-color: var(--Azul-encabezado);
+  border-radius: 6px;
+  border: 1px solid var(--Blanco);
+  padding: 5px 10px;
+  color: var(--Blanco);
 }
-.fondo-foto{
-    width: 100%;
-    min-width: 320px;
-    max-width: 1440px;
-    height: 200px;
+.fondo-foto {
+  width: 100%;
+  min-width: 320px;
+  max-width: 1440px;
+  height: 200px;
 }
-::placeholder{
-    color: var(--Blanco);
+::placeholder {
+  color: var(--Blanco);
 }
-#filtrarBoton{
-    background-color: var(--Azul-contenido);
-    border-radius: 6px;
-    padding: 7px 25px;
-    border: none;
+#filtrarBoton {
+  background-color: var(--Azul-contenido);
+  border-radius: 6px;
+  padding: 7px 25px;
+  border: none;
 }
 
-.tituloAtletas{
-    text-align: center;
-    padding: 15px;
+.tituloAtletas {
+  text-align: center;
+  padding: 15px;
 }
-.selectores{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center; 
-    align-items: center;
-    padding: 10px;
+.selectores {
+  display: flex;
+  width: 90%;
+  flex-flow: row wrap;
+  /* justify-content: center;  */
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
 }
-.botones{
-     display: flex;
-    flex-flow: row wrap;
-      justify-content: center; 
-   
-    
+.botones {
+  display: flex;
+  width: 60%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top:10px ;
 }
 
 /*Contenido Atletas*/
 
-
-#atletas{
-    padding: 30px;
-    background-color: #4183d3;
-    color: var(--Blanco);
-    font-weight: bolder;   
+#atletas {
+  padding: 30px;
+  background-color: #4183d3;
+  color: var(--Blanco);
+  font-weight: bolder;
 }
 
-hr{
-    padding: 0;
+hr {
+  margin-bottom:40px;
 }
-p{
-    display: block;
-    
+p {
+  display: block;
 }
-input{
-
+input {
 }
 
 /* #contenido{
@@ -146,16 +153,16 @@ input{
     grid-row-gap: 30px
 }*/
 
- #tituloTabla{
-    background-color:#134785;
-    color: var(--Blanco);
-    padding: 30PX;
-    display: none;
-    grid-column-gap: 7%; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    font-weight: bolder;
-    font-size: 12px;
-}  
+#tituloTabla {
+  background-color: #134785;
+  color: var(--Blanco);
+  padding: 30px;
+  display: none;
+  grid-column-gap: 7%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-weight: bolder;
+  font-size: 12px;
+}
 
 /* #tituloTabla{
     background-color:#134785;
@@ -165,7 +172,6 @@ input{
     font-weight: bolder;
     font-size: 12px;
 } */
-.nombre{
-    font-size: 15px;
-} 
-
+.nombre {
+  font-size: 15px;
+}
