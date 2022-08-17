@@ -39,10 +39,34 @@
       </div>
     </section>
 
-  <!-- <section id="Statistics">
-<h2>Statistics</h2>
-<p>(resultados )</p>
-  </section> -->
+
+ <section id="Statistics">
+  <div id="inputsCalculos">
+    <h2 class="tituloEstadistica">Statistics and Curisities</h2>
+    <p>Write a country and it will show you the medal or gender statistics</p>
+    <input type="text" placeholder="Write the country" id="country-statistics">
+
+    <button id="buscarDatos"> Search</button>
+      <br>
+      <p> What percentage do you want to get?</p>
+      <div class="botones-calculos"> 
+      <button id="calculo-medal"> Medal</button> 
+      <button id="calculo-gender"> Gender</button>
+      </div>
+  </div>
+
+<div class="espacio"></div>
+
+  <div id="contenedorCalculos"> 
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+ 
+</section> 
+<!-- <div class="chart-container" style="height:400px; width:400px">
+  <canvas id="myChart"></canvas>
+</div> -->
 
   
     <div id="cInput">
@@ -91,6 +115,7 @@
   </main>
 
   <script src="main.js" type="module"></script>
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+</body>
 </html>
