@@ -54,3 +54,15 @@ header{
     padding-top:10px;
     align-self: center;
   }
+
+  .botones-calculos{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+  }
+
+  .botones-calculos{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+  }

@@ -1,5 +1,5 @@
 //import  from "./data.js";
-import { filtrado, ordenar } from "./data.js";
+import { calcularGender, calcularMedal, filtrado, ordenar } from "./data.js";
 import olymGam from "./data/athletes/athletes.js";
 import data from "./data/athletes/athletes.js";
 
@@ -21,6 +21,99 @@ window.addEventListener("DOMContentLoaded", () => {
   //console.log("loaded");
 });
 
+
+
+
+
+const botonbuscar = document.getElementById("buscarDatos")
+botonbuscar.addEventListener( "click",()=>{
+  let dataActualCalcular = data.athletes;
+  const botonMedalla= document.getElementById("calculo-medal");
+  const botonGenero = document.getElementById("calculo-gender");
+  const inputPais = document.getElementById("country-statistics").value;
+  
+
+botonMedalla.addEventListener("click", ()=>{
+  dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
+  console.log("hola");
+
+  let totalBuscado = dataActualCalcular.length;
+  console.log(totalBuscado);
+
+  let dataMedallaOro = filtrado(dataActualCalcular, "Gold", "medal")
+  let totalOro= dataMedallaOro.length
+  console.log(totalOro);
+
+  let dataMedallaPlata = filtrado(dataActualCalcular, "Silver", "medal")
+  let totalPlata= dataMedallaPlata.length
+  console.log(totalPlata);
+
+  let dataMedallaBronce = filtrado(dataActualCalcular, "Bronze", "medal")
+  let totalBronce= dataMedallaBronce.length
+  console.log(totalBronce);
+
+  console.log(calcularMedal( totalBuscado, totalOro, totalPlata, totalBronce));
+
+ let contenedorCalculo = document.getElementById("contenedorCalculos");
+ contenedorCalculo.innerHTML = calcularMedal( totalBuscado, totalOro, totalPlata, totalBronce);
+
+ const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
+
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [0, 10, 5, 2, 20, 30, 45],
+  }]
+};
+
+const config = {
+  type: 'pie',
+  data: data,
+  options: {}
+};
+ 
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
+
+});
+
+
+botonGenero.addEventListener("click", ()=>{
+  dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
+  console.log("hola");
+
+  let totalBuscado = dataActualCalcular.length;
+  console.log(totalBuscado);
+
+  let dataHombre = filtrado(dataActualCalcular, "M", "gender")
+  let totalHombre= dataHombre.length
+  console.log(totalHombre);
+
+  let dataMujer = filtrado(dataActualCalcular, "F", "gender")
+  let totalMujer= dataMujer.length
+  console.log(totalMujer);
+
+  console.log(calcularGender( totalBuscado, totalHombre, totalMujer));
+
+  let contenedorCalculo = document.getElementById("contenedorCalculos");
+  contenedorCalculo.innerHTML = calcularGender( totalBuscado, totalHombre, totalMujer);
+});
+})
+
+
+
 const boton = document.getElementById("filtrarBoton");
 
 boton.addEventListener("click", () => {
@@ -32,6 +125,7 @@ boton.addEventListener("click", () => {
   //console.log(dataActual);
 
   if (inputCountry !== "") {
+ 
     dataActual = filtrado(dataActual, inputCountry, "team");
     //console.log(dataActual);
   }
@@ -56,17 +150,31 @@ boton.addEventListener("click", () => {
     dataActual = ordenar(dataActual, inputValor);
 
     let contenedor = document.getElementById("atletas");
+    let posicionInicial= 0;
+    let posicionFinal= 2;
     let datosFiltrados = "";
-    for (let cont of dataActual) {
+    for( let i=posicionInicial; i < posicionFinal; i++){
       datosFiltrados += `<article id="contenido">
-  <p class="nombre">${cont.name}</p>
-  <p>  ${cont.team}</p>
-  <p>  ${cont.gender}</p>
-  <p>  ${cont.sport}</p>
-  <p>  ${cont.medal}</p>
-</article> <hr>`;
-      contenedor.innerHTML = datosFiltrados;
+      <p class="nombre">${dataActual[i].name}</p>
+      <p>  ${dataActual[i].team}</p>
+      <p>  ${dataActual[i].gender}</p>
+      <p>  ${dataActual[i].sport}</p>
+      <p>  ${dataActual[i].medal}</p>
+    </article> <hr>`;
+          contenedor.innerHTML = datosFiltrados;
+
     }
+
+//     for (let cont of dataActual) {
+//       datosFiltrados += `<article id="contenido">
+//   <p class="nombre">${cont.name}</p>
+//   <p>  ${cont.team}</p>
+//   <p>  ${cont.gender}</p>
+//   <p>  ${cont.sport}</p>
+//   <p>  ${cont.medal}</p>
+// </article> <hr>`;
+//       contenedor.innerHTML = datosFiltrados;
+//     }
   });
   let contenedor = document.getElementById("atletas");
   let datosFiltrados = "";
