@@ -1,5 +1,106 @@
-# Data Lovers
+# Data Lovers / Olympic Games
+Les presentamos el segundo proyecto de Laboratoria
+/ Colaboradoras: **Daniela Nieto y Lina Alvarado.**
 
+## ¿En qué consiste el proyecto?
+En este proyecto **construirás una página web para visualizar un conjunto (set) de datos** que se adecúe a lo que descubras que tu usuario necesita.
+Como entregable final tendrás una página web que permita visualizar la data, filtrarla, ordenarla y hacer algún cálculo agregado. Con cálculo agregado nos referimos a distintos cálculos que puedes hacer con la data para mostrar información aún más relevante para los usuarios (promedio, el valor máximo o mínimo, etc).
+Esta vez te proponemos una serie de datos de diferentes temáticas para que explores y decidas con qué temática te interesa trabajar. Hemos elegido específicamente estos sets de datos porque creemos que se adecúan bien a esta etapa de tu aprendizaje.
+Una vez que definas tu área de interés, buscar entender quién es tu usuario y qué necesita saber o ver exactamente; luego podrás construir la interfaz que le ayude a interactuar y entender mejor esos datos.
+
+# Nuestro Proceso..
+## 1. Investigar a mi usuario:
+Elegimos la data de Juegos Olímpicos y empezamos a entender cuáles eran las necesidades de nuestros usuarios [Investigación de Usuarios.](https://docs.google.com/document/d/1S8wLI0i7P98VzfJ_8JKQwW0lnU1VzGY2r868PJCVwkI/edit?usp=sharing)
+
+Una vez definimos esto, construimos las historias de usuarios e hicimos lluvia de idea de como queríamos que se viera en pantalla [Idea de diseño inicial, lluvia de ideas.](https://www.figma.com/file/XhGlwhP1Mv5oLtlV6cj3S0/Untitled?node-id=0%3A1)
+
+### Idea de diseño inicial
+Fuimos iterando en el proceso
+(Poner imagen de diseño incial)
+
+### 1.1 Historia 0 - Visualizar
+_“yo como usuario visitante **quiero visualizar** en la pantalla todos los participantes de los juegos olímpicos”_
+
+**Criterios de Aceptación:**
+-Visualizar en la pantalla los participantes
+
+**Definición de terminado:**
+-Que la función permita mostrar la información
+-Que tenga estilo según lo acordado en el prototipo
+-Que esté en el GitHub.
+
+(poner imagen)
+
+### 1.2 Historia 1 - Filtrar
+_“yo como usuario visitante **quiero filtrar** a los atletas por país, género, deporte y medallas para poder visualizar los atletas.”_
+
+**Criterios de Aceptación:**
+-Que el usuario pueda seleccionar país/género..
+-Que salga la información filtrada en pantalla.
+
+**Definición de terminado:**
+-Que el usuario pueda interactuar
+-Que la información esté en la pantalla.
+-Que el diseño sea responsive.
+-Que la función filtrar pase el test unitario.
+-Que esté en el GitHub.
+
+### 1.3 Historia 2 - Ordenar
+_“Yo como usuario visitante **quiero ordenar** los nombres de los atletas de la a-z o de la z-a para encontrar más rápido al atleta”_
+
+**Criterios de Aceptación:**
+-Que el usuario seleccione como quiere ordenar.
+-Que el usuario visualicé la información ordenada.
+
+**Definición de terminado:**
+-Que el usuario pueda interactuar
+-Que la información esté en la pantalla.
+-Que el diseño sea responsive.
+-Que la función ordenar  pase el test unitario.
+-Que esté en el GitHub.
+
+
+>Hubo un cambio en el diseño, se decidió poner una imagen de fondo en vez de la imagen de las mascotas de los juegos olímpicos, para darle un aspecto visual más profesional.
+
+(Poner imagen)
+
+### 1.4 Historia 3 - Calcular
+_“Yo como usuario visitante **quiero ver cálculos** de porcentaje por país vs género y país vs medallero para conocer el porcentaje de mujeres/hombres que participaron. Así mismo, el porcentaje por medalleria._
+
+**Criterios de Aceptación:**
+-Que el usuario pueda seleccionar el país.
+-Que seleccione la variable que quiere calcular.
+-Que se visualice el resultado.
+
+**Definición de terminado:**
+-Que el usuario pueda interactuar
+-Que el resultado se muestre en la pantalla.
+-Que el diseño sea responsive.
+-Que la función calcular  pase el test unitario.
+-Que esté en el GitHub.
+
+>Hubo un cambio en el diseño, se decidió resaltar los selectores de filtros de la lista de los atletas.
+
+(Poner imagen)
+
+>Y se agregó la sección donde se visualizarían los cálculos.
+
+(Poner imagen)
+
+
+
+### Diseño Responsivo
+Empezamos con movile frist, utilizamos media query para adaptar el diseño a las pantallas. 
+[Link a Figma](https://www.figma.com/file/6LCPwrMod3qSgWYVOh7Oqt/Data-Lovers?node-id=0%3A1)
+
+(imagenes)
+
+#### ¡Prueba nuestra página!
+[Link a Git-Hub Pages](https://github.com/Laboratoria/BOG005-data-lovers)
+
+
+
+***
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
@@ -12,7 +113,7 @@
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 * [9. Checklist](#9-checklist)
 
-***
+
 
 ## 1. Preámbulo
 

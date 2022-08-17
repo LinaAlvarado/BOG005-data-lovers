@@ -105,6 +105,7 @@ select {
 .tituloAtletas {
   text-align: center;
   padding: 15px;
+  font-size: 18px;
 }
 .selectores {
   display: flex;
@@ -175,3 +176,76 @@ input {
 .nombre {
   font-size: 15px;
 }
+
+#Statistics{
+ background-color: rgb(255, 255, 255);
+ height:300px;
+ display: flex;
+ flex-flow: column wrap;
+ margin: 20px;
+
+}
+
+#inputsCalculos{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputsCalculos p{
+  color: var(--Azul-encabezado);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 7px 0;
+}
+.tituloEstadistica{
+  text-align: center;
+  color: var(--Azul-titulo);
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+ 
+}
+
+#buscarDatos{
+  width: 100px;
+  border: 1px solid var(--Azul-contenido);
+  border-radius: 7px;
+  padding:8px 15px ;
+  color:var(--Azul-contenido);
+  font-weight: bolder;
+  padding-top: 6px;
+  
+}
+
+#calculo-medal{ width: 100px;
+  border: none;
+  background-color: var(--Azul-contenido);
+  border-radius: 7px;
+  padding:8px 15px ;
+  color: white;
+  font-weight: bolder;}
+
+  #calculo-gender{width: 100px;
+    border: none;
+    background-color: var(--Azul-contenido);
+    border-radius: 7px;
+    padding:8px 15px ;
+    color: white;
+    font-weight: bolder;}
+
+    .botones-calculos{
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    #contenedorCalculos{
+      padding-top: 10px;
+      font-size:14px;
+      font-weight:bolder;
+      color: var(--Azul-encabezado);
+      text-align: center;
+    }
