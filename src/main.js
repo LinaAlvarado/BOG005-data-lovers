@@ -1,5 +1,5 @@
 //import  from "./data.js";
-import { calcularGender, calcularMedal, filtrado, ordenar } from "./data.js";
+import { calcularPorcentaje, filtrado, ordenar } from "./data.js";
 import olymGam from "./data/athletes/athletes.js";
 import data from "./data/athletes/athletes.js";
 
@@ -21,98 +21,123 @@ window.addEventListener("DOMContentLoaded", () => {
   //console.log("loaded");
 });
 
-
-
-
-
-const botonbuscar = document.getElementById("buscarDatos")
-botonbuscar.addEventListener( "click",()=>{
+const botonbuscar = document.getElementById("buscarDatos");
+botonbuscar.addEventListener("click", () => {
   let dataActualCalcular = data.athletes;
-  const botonMedalla= document.getElementById("calculo-medal");
+  const botonMedalla = document.getElementById("calculo-medal");
   const botonGenero = document.getElementById("calculo-gender");
   const inputPais = document.getElementById("country-statistics").value;
-  
 
-botonMedalla.addEventListener("click", ()=>{
-  dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
-  console.log("hola");
+  botonMedalla.addEventListener("click", () => {
+    dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
+    //console.log("hola");
 
-  let totalBuscado = dataActualCalcular.length;
-  console.log(totalBuscado);
+    let totalBuscado = dataActualCalcular.length;
+    console.log(dataActualCalcular);
+    if (totalBuscado === 0) {
+      let contenedorCalculo = document.getElementById("contenedorCalculos");
+      contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
+      <p>Oops! We do not have that country in the database, try another.</p>
+      </div>`;
+    } else {
+      let dataMedallaOro = filtrado(dataActualCalcular, "Gold", "medal");
+      let totalOro = dataMedallaOro.length;
+      //console.log(totalOro);
+      let porcentajeOro = calcularPorcentaje(totalBuscado, totalOro);
 
-  let dataMedallaOro = filtrado(dataActualCalcular, "Gold", "medal")
-  let totalOro= dataMedallaOro.length
-  console.log(totalOro);
+      let dataMedallaPlata = filtrado(dataActualCalcular, "Silver", "medal");
+      let totalPlata = dataMedallaPlata.length;
+      //console.log(totalPlata);
+      let porcentajePlata = calcularPorcentaje(totalBuscado, totalPlata);
 
-  let dataMedallaPlata = filtrado(dataActualCalcular, "Silver", "medal")
-  let totalPlata= dataMedallaPlata.length
-  console.log(totalPlata);
+      let dataMedallaBronce = filtrado(dataActualCalcular, "Bronze", "medal");
+      let totalBronce = dataMedallaBronce.length;
+      //console.log(totalBronce);
+      let porcentajeBronce = calcularPorcentaje(totalBuscado, totalBronce);
+      let contenedorCalculo = document.getElementById("contenedorCalculos");
+      contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
+    <p>The percentage of gold medals is: ${porcentajeOro}%, the percentage of silver medals is: ${porcentajePlata}%, the percentage of bronze medals is: ${porcentajeBronce}% </p>
+    </div>`;
+      document.getElementById("chart-container").style.display = "flex";
+      document.getElementById("chart-containerOne").style.display = "none";
 
-  let dataMedallaBronce = filtrado(dataActualCalcular, "Bronze", "medal")
-  let totalBronce= dataMedallaBronce.length
-  console.log(totalBronce);
+      let medallas = [porcentajeBronce, porcentajePlata, porcentajeOro];
+      const data = {
+        labels: ["Bronze", "Silver", "Gold"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: medallas,
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(54, 162, 235)",
+              "rgb(255, 205, 86)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+      const config = {
+        type: "pie",
+        data: data,
+      };
 
-  console.log(calcularMedal( totalBuscado, totalOro, totalPlata, totalBronce));
+      // eslint-disable-next-line no-unused-vars, no-undef
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    }
+  });
 
- let contenedorCalculo = document.getElementById("contenedorCalculos");
- contenedorCalculo.innerHTML = calcularMedal( totalBuscado, totalOro, totalPlata, totalBronce);
+  botonGenero.addEventListener("click", () => {
+    dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
+    console.log("hola");
 
- const labels = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-];
+    let totalBuscado = dataActualCalcular.length;
+    console.log(totalBuscado);
+    if (totalBuscado === 0) {
+      let contenedorCalculo = document.getElementById("contenedorCalculos");
+      contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
+      <p>Oops! We do not have that country in the database, try another.</p>
+      </div>`;
+    } else {
+      let dataHombre = filtrado(dataActualCalcular, "M", "gender");
+      let totalHombre = dataHombre.length;
 
-const data = {
-  labels: labels,
-  datasets: [{
-    label: 'My First dataset',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
-  }]
-};
+      let porcentajeHombre = calcularPorcentaje(totalBuscado, totalHombre);
 
-const config = {
-  type: 'pie',
-  data: data,
-  options: {}
-};
- 
-const myChart = new Chart(
-  document.getElementById('myChart'),
-  config
-);
+      let dataMujer = filtrado(dataActualCalcular, "F", "gender");
+      let totalMujer = dataMujer.length;
 
+      let porcentajeMujer = calcularPorcentaje(totalBuscado, totalMujer);
+
+      let contenedorCalculo = document.getElementById("contenedorCalculos");
+      contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
+    <p>The percentage of women is: ${porcentajeMujer}%, the percentage of men  is: ${porcentajeHombre}% </p>
+    </div>`;
+      document.getElementById("chart-containerOne").style.display = "flex";
+      document.getElementById("chart-container").style.display = "none";
+
+      let genero = [porcentajeMujer, porcentajeHombre];
+      const data = {
+        labels: ["Women", "Men"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: genero,
+            backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
+            hoverOffset: 4,
+          },
+        ],
+      };
+      const config = {
+        type: "pie",
+        data: data,
+      };
+
+      // eslint-disable-next-line no-unused-vars, no-undef
+      const myChart = new Chart(document.getElementById("myChartOne"), config);
+    }
+  });
 });
-
-
-botonGenero.addEventListener("click", ()=>{
-  dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
-  console.log("hola");
-
-  let totalBuscado = dataActualCalcular.length;
-  console.log(totalBuscado);
-
-  let dataHombre = filtrado(dataActualCalcular, "M", "gender")
-  let totalHombre= dataHombre.length
-  console.log(totalHombre);
-
-  let dataMujer = filtrado(dataActualCalcular, "F", "gender")
-  let totalMujer= dataMujer.length
-  console.log(totalMujer);
-
-  console.log(calcularGender( totalBuscado, totalHombre, totalMujer));
-
-  let contenedorCalculo = document.getElementById("contenedorCalculos");
-  contenedorCalculo.innerHTML = calcularGender( totalBuscado, totalHombre, totalMujer);
-});
-})
-
-
 
 const boton = document.getElementById("filtrarBoton");
 
@@ -125,7 +150,6 @@ boton.addEventListener("click", () => {
   //console.log(dataActual);
 
   if (inputCountry !== "") {
- 
     dataActual = filtrado(dataActual, inputCountry, "team");
     //console.log(dataActual);
   }
@@ -150,10 +174,10 @@ boton.addEventListener("click", () => {
     dataActual = ordenar(dataActual, inputValor);
 
     let contenedor = document.getElementById("atletas");
-    let posicionInicial= 0;
-    let posicionFinal= 2;
+    let posicionInicial = 0;
+    let posicionFinal = 2;
     let datosFiltrados = "";
-    for( let i=posicionInicial; i < posicionFinal; i++){
+    for (let i = posicionInicial; i < posicionFinal; i++) {
       datosFiltrados += `<article id="contenido">
       <p class="nombre">${dataActual[i].name}</p>
       <p>  ${dataActual[i].team}</p>
@@ -161,20 +185,19 @@ boton.addEventListener("click", () => {
       <p>  ${dataActual[i].sport}</p>
       <p>  ${dataActual[i].medal}</p>
     </article> <hr>`;
-          contenedor.innerHTML = datosFiltrados;
-
+      contenedor.innerHTML = datosFiltrados;
     }
 
-//     for (let cont of dataActual) {
-//       datosFiltrados += `<article id="contenido">
-//   <p class="nombre">${cont.name}</p>
-//   <p>  ${cont.team}</p>
-//   <p>  ${cont.gender}</p>
-//   <p>  ${cont.sport}</p>
-//   <p>  ${cont.medal}</p>
-// </article> <hr>`;
-//       contenedor.innerHTML = datosFiltrados;
-//     }
+    //     for (let cont of dataActual) {
+    //       datosFiltrados += `<article id="contenido">
+    //   <p class="nombre">${cont.name}</p>
+    //   <p>  ${cont.team}</p>
+    //   <p>  ${cont.gender}</p>
+    //   <p>  ${cont.sport}</p>
+    //   <p>  ${cont.medal}</p>
+    // </article> <hr>`;
+    //       contenedor.innerHTML = datosFiltrados;
+    //     }
   });
   let contenedor = document.getElementById("atletas");
   let datosFiltrados = "";
