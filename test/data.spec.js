@@ -1,4 +1,4 @@
-import { filtrado, ordenar } from "../src/data.js";
+import { calcularPorcentaje, filtrado, ordenar } from "../src/data.js";
 import dataMock from "./datamock.js";
 
 const data = [
@@ -88,7 +88,7 @@ describe("Test funcion filtrar", () => {
         gender: "F",
         medal: "Bronze",
       },
-    
+
       {
         name: "Giovanni Abagnale",
         team: "Italy",
@@ -155,4 +155,27 @@ describe("Test funcion ordenar", () => {
       },
     ]);
   });
+});
+
+let mujer = 1;
+// let hombre = 2;
+let oro = 0;
+// let plata = 1;
+// let bronce = 2;
+let totalDatos = 3;
+describe("Test de la funcion calcular porcentajes ", () => {
+  it("ver si es una función", () => {
+    expect(typeof calcularPorcentaje).toBe("function");
+  });
+
+  it("calcula los porcentajes del genero femenino", () => {
+    expect(calcularPorcentaje(totalDatos, mujer)).toStrictEqual(33);
+  });
+  it("calcula los porcentaje de medallas de oro", () => {
+    expect(calcularPorcentaje(totalDatos, oro)).toStrictEqual(0);
+  });
+});
+
+it("calcula los porcentajes del genero femenino", () => {
+  expect(calcularPorcentaje(totalDatos, mujer)).toStrictEqual(33);
 });
