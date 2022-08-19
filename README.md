@@ -28,14 +28,17 @@ Fuimos iterando en el proceso
 _“yo como usuario visitante **quiero visualizar** en la pantalla todos los participantes de los juegos olímpicos”_
 
 **Criterios de Aceptación:**
--Visualizar en la pantalla los participantes
+
+- Visualizar en la pantalla los participantes
 
 **Definición de terminado:**
--Que la función permita mostrar la información
 
--Que tenga estilo según lo acordado en el prototipo
 
--Que esté en el GitHub.
+- Que la función permita mostrar la información
+- Que tenga estilo según lo acordado en el prototipo
+- Que esté en el GitHub.
+
+
 
 ![Boceto N0.1](/src/img/boceto1.png)
 
@@ -44,15 +47,17 @@ _“yo como usuario visitante **quiero visualizar** en la pantalla todos los par
 _“yo como usuario visitante **quiero filtrar** a los atletas por país, género, deporte y medallas para poder visualizar los atletas.”_
 
 **Criterios de Aceptación:**
--Que el usuario pueda seleccionar país/género..
--Que salga la información filtrada en pantalla.
+
+- Que el usuario pueda seleccionar país/género..
+- Que salga la información filtrada en pantalla.
 
 **Definición de terminado:**
--Que el usuario pueda interactuar
--Que la información esté en la pantalla.
--Que el diseño sea responsive.
--Que la función filtrar pase el test unitario.
--Que esté en el GitHub.
+
+- Que el usuario pueda interactuar
+- Que la información esté en la pantalla.
+- Que el diseño sea responsive.
+- Que la función filtrar pase el test unitario.
+- Que esté en el GitHub.
 
 ![Boceto N0.3](/src/img/dise%C3%B1oacolor.png)
 
@@ -61,15 +66,17 @@ _“yo como usuario visitante **quiero filtrar** a los atletas por país, géner
 _“Yo como usuario visitante **quiero ordenar** los nombres de los atletas de la a-z o de la z-a para encontrar más rápido al atleta”_
 
 **Criterios de Aceptación:**
--Que el usuario seleccione como quiere ordenar.
--Que el usuario visualicé la información ordenada.
+
+- Que el usuario seleccione como quiere ordenar.
+- Que el usuario visualicé la información ordenada.
 
 **Definición de terminado:**
--Que el usuario pueda interactuar
--Que la información esté en la pantalla.
--Que el diseño sea responsive.
--Que la función ordenar pase el test unitario.
--Que esté en el GitHub.
+
+- Que el usuario pueda interactuar
+- Que la información esté en la pantalla.
+- Que el diseño sea responsive.
+- Que la función ordenar pase el test unitario.
+- Que esté en el GitHub.
 
 > Hubo un cambio en el diseño, se decidió poner una imagen de fondo en vez de la imagen de las mascotas de los juegos olímpicos, para darle un aspecto visual más profesional.
 
@@ -84,16 +91,18 @@ _“Yo como usuario visitante **quiero ordenar** los nombres de los atletas de l
 _“Yo como usuario visitante **quiero ver cálculos** de porcentaje por país vs género y país vs medallero para conocer el porcentaje de mujeres/hombres que participaron. Así mismo, el porcentaje por medalleria._
 
 **Criterios de Aceptación:**
--Que el usuario pueda seleccionar el país.
--Que seleccione la variable que quiere calcular.
--Que se visualice el resultado.
+
+- Que el usuario pueda seleccionar el país.
+- Que seleccione la variable que quiere calcular.
+- Que se visualice el resultado.
 
 **Definición de terminado:**
--Que el usuario pueda interactuar
--Que el resultado se muestre en la pantalla.
--Que el diseño sea responsive.
--Que la función calcular pase el test unitario.
--Que esté en el GitHub.
+
+- Que el usuario pueda interactuar
+- Que el resultado se muestre en la pantalla.
+- Que el diseño sea responsive.
+- Que la función calcular pase el test unitario.
+- Que esté en el GitHub.
 
 > Y se agregó la sección donde se visualizarían los cálculos.
 
@@ -108,13 +117,16 @@ _“Yo como usuario visitante **quiero ver cálculos** de porcentaje por país v
 Empezamos con movile frist, utilizamos media query para adaptar el diseño a las pantallas.
 [Link a Figma](https://www.figma.com/file/6LCPwrMod3qSgWYVOh7Oqt/Data-Lovers?node-id=0%3A1)
 
-####Formato Celular
+#### Formato Celular
+
 ![Boceto N0.3](/src/img/fotoCel.PNG)
 
-####Formato Tablet
+#### Formato Tablet
+
 ![Boceto N0.3](/src/img/fotoTablet.PNG)
 
-####Formato Computador
+#### Formato Computador
+
 ![Boceto N0.3](/src/img/fotoPag1.png)
 ![Boceto N0.3](/src/img/fotoPag2.png)
 
