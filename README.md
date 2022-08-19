@@ -33,9 +33,12 @@ _“yo como usuario visitante **quiero visualizar** en la pantalla todos los par
 
 **Definición de terminado:**
 
+
 - Que la función permita mostrar la información
 - Que tenga estilo según lo acordado en el prototipo
 - Que esté en el GitHub.
+
+
 
 ![Boceto N0.1](/src/img/boceto1.png)
 
