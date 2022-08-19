@@ -114,13 +114,16 @@ _“Yo como usuario visitante **quiero ver cálculos** de porcentaje por país v
 Empezamos con movile frist, utilizamos media query para adaptar el diseño a las pantallas.
 [Link a Figma](https://www.figma.com/file/6LCPwrMod3qSgWYVOh7Oqt/Data-Lovers?node-id=0%3A1)
 
-####Formato Celular
+#### Formato Celular
+
 ![Boceto N0.3](/src/img/fotoCel.PNG)
 
-####Formato Tablet
+#### Formato Tablet
+
 ![Boceto N0.3](/src/img/fotoTablet.PNG)
 
-####Formato Computador
+#### Formato Computador
+
 ![Boceto N0.3](/src/img/fotoPag1.png)
 ![Boceto N0.3](/src/img/fotoPag2.png)
 
