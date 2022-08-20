@@ -24,18 +24,21 @@ html {
 }
 
 /*HEADER*/
-header {
+header{
   background-color: rgb(255, 255, 255);
   width: 100%;
   display: flex; 
-justify-content:space-between;
-align-items: center; 
+  /* espacio entre los elementos */
+  justify-content:space-between;
+  /* centrar elementos */
+  align-items: center; 
 }
+
 #logo {
-  height: 30px;
-  /* margin:20px; */
-  margin: 0;
+  height:30px;
+  margin:0;
 }
+
 #tituloPrin {
   display: inline-block;
   padding: 25px;
@@ -46,59 +49,65 @@ align-items: center;
 
 /*SECCION INTRO*/
 .intro {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-width: 320px;
-  height: 334px;
+  min-width:320px;
+  height:334px;
   text-align: center;
   background-image: url("img/fondopag.png");
 }
 
-.tituloD {
+.tituloD{
   color: var(--Blanco);
-  z-index: 1;
-  font-size: 18px;
+  /* capas */
+  z-index:1;
+  font-size:18px;
 }
+
 .primerParr {
   color: var(--Blanco);
-  z-index: 1;
-  font-size: 17px;
+  z-index:1;
+  font-size:17px;
 }
-/* SECCION INPUT */
 
-#cInput {
-    display: flex;
-    flex-direction: column;
+/* SECCION INPUT */
+#cInput{
+  display: flex;
+  flex-direction: column;
   background-color: var(--Azul-encabezado);
   height: 200px;
   color: var(--Blanco);
   align-items: center;
   justify-content: center;
 }
-input,
-select {
+
+/* Por etiquetas */
+input,select{
   background-color: var(--Azul-encabezado);
   border-radius: 6px;
   border: 1px solid var(--Blanco);
-  padding: 5px 10px;
+  padding:5px 10px;
   color: var(--Blanco);
 }
-.fondo-foto {
+
+.fondo-foto{
   width: 100%;
-  min-width: 320px;
-  max-width: 1440px;
+  min-width:320px;
+  max-width:1440px;
   height: 200px;
 }
-::placeholder {
+
+/* Pseudo-elementos */
+::placeholder{
   color: var(--Blanco);
 }
+
 #filtrarBoton {
   background-color: var(--Azul-contenido);
-  border-radius: 6px;
-  padding: 7px 25px;
+  border-radius:6px;
+  padding:7px 25px;
   border: none;
 }
 
@@ -111,14 +120,13 @@ select {
   display: flex;
   width: 90%;
   flex-flow: row wrap;
-  /* justify-content: center;  */
   justify-content: space-between;
   align-items: center;
-  /* padding: 10px; */
   margin-left: 10px;
   margin-right: 10px;
   padding-top: 10px;
 }
+
 .botones {
   display: flex;
   width: 60%;
@@ -128,7 +136,6 @@ select {
 }
 
 /*Contenido Atletas*/
-
 #atletas {
   padding: 30px;
   background-color: #4183d3;
@@ -142,47 +149,30 @@ hr {
 p {
   display: block;
 }
-input {
-}
-
-/* #contenido{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   justify-items: stretch;
-   align-items: center;
-    grid-column-gap: 7%;
-    grid-row-gap: 30px
-}*/
 
 #tituloTabla {
   background-color: #134785;
   color: var(--Blanco);
   padding: 30px;
+  /* Para celular no se ve el titulo */
   display: none;
-  grid-column-gap: 7%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  font-weight: bolder;
+  /* espacio entre columnas */
+  grid-column-gap:7%;
+  /*forma explicita*/
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+  font-weight:bolder;
   font-size: 12px;
 }
 
-/* #tituloTabla{
-    background-color:#134785;
-    color: var(--Blanco);
-    padding: 30PX;
-    display: block;
-    font-weight: bolder;
-    font-size: 12px;
-} */
 .nombre {
   font-size: 15px;
 }
 
 #Statistics{
- background-color: rgb(255, 255, 255);
- /* height:350px; */
- display: flex;
- flex-flow: column wrap;
- margin: 20px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: column wrap;
+  margin: 20px;
 
 }
 
@@ -193,6 +183,7 @@ input {
   align-items: center;
 }
 
+/* del id=Inputscalculos solo los parrafos tengan este estilo */
 #inputsCalculos p{
   color: var(--Azul-encabezado);
   text-align: center;
@@ -200,13 +191,13 @@ input {
   font-weight: 500;
   margin: 7px 0;
 }
+
 .tituloEstadistica{
   text-align: center;
   color: var(--Azul-titulo);
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: bolder;
- 
 }
 
 #buscarDatos{
@@ -217,10 +208,10 @@ input {
   color:var(--Azul-contenido);
   font-weight: bolder;
   padding-top: 6px;
-  
 }
 
-#calculo-medal{ width: 100px;
+#calculo-medal{
+  width: 100px;
   border: none;
   background-color: var(--Azul-contenido);
   border-radius: 7px;
@@ -228,41 +219,41 @@ input {
   color: white;
   font-weight: bolder;}
 
-  #calculo-gender{width: 100px;
-    border: none;
-    background-color: var(--Azul-contenido);
-    border-radius: 7px;
-    padding:8px 15px ;
-    color: white;
-    font-weight: bolder;}
+#calculo-gender{
+  width: 100px;
+  border: none;
+  background-color: var(--Azul-contenido);
+  border-radius: 7px;
+  padding:8px 15px ;
+  color: white;
+  font-weight: bolder;
+}
 
-    .botones-calculos{
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-    }
+.botones-calculos{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
 
-    #contenedorCalculos{
-      padding-top: 10px;
-      font-size:14px;
-      font-weight:bolder;
-      color: var(--Azul-encabezado);
-      text-align: center;
-    }
-    #chart-container{
-      display: none;
-      height: 250px;
-      width: 250px;
-      margin: 10px auto;
+#contenedorCalculos{
+  padding-top: 10px;
+  font-size:14px;
+  font-weight:bolder;
+  color: var(--Azul-encabezado);
+  text-align: center;
+}
 
-    }
-    #chart-containerOne{
-      display: none;
-      height: 250px;
-      width: 250px;
-      margin: 10px auto;
-    }
-    /* .graficaCalculo{
-      display: flex;
-      height: 50vw;
-    } */
+#chart-container{
+  display: none;
+  height: 250px;
+  width: 250px;
+  margin: 10px auto;
+}
+
+#chart-containerOne{
+  display: none;
+  height: 250px;
+  width: 250px;
+  margin: 10px auto;
+}
+

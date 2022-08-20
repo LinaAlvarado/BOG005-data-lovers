@@ -28,7 +28,7 @@ const data = [
 ];
 
 describe("Test funcion filtrar", () => {
-  // FN FILTRADO
+  // Filtrado es una función
   it("filtrado es una funcion", () => {
     expect(typeof filtrado).toBe("function");
   });
@@ -130,6 +130,7 @@ describe("Test funcion ordenar", () => {
       },
     ]);
   });
+
   it("ordena de la Z a A", () => {
     expect(ordenar(data, "mayor")).toStrictEqual([
       {
@@ -163,6 +164,7 @@ let oro = 0;
 // let plata = 1;
 // let bronce = 2;
 let totalDatos = 3;
+
 describe("Test de la funcion calcular porcentajes ", () => {
   it("ver si es una función", () => {
     expect(typeof calcularPorcentaje).toBe("function");

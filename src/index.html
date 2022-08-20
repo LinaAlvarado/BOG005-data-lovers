@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!-- ICONO DE PAGINA -->
   <link rel="icon" href="img/logo.png" />
+  <!-- Tipografia -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+  <!-- Estilos - dispositivos -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="css/celularM.css" media="(min-width:375px)"/>
   <link rel="stylesheet" href="css/celularL.css" media="(min-width:425px)"/>
@@ -21,13 +21,18 @@
 <body>
 
   <header>
+
     <div> 
       <img id="logo" src="img/logo.png" alt="logo juegos olimpicos"> 
     </div>
+
     <div>
       <h1 id="tituloPrin">Olympic Games</h1>
     </div>
-    <div> </div>
+
+    <div>
+    </div>
+
   </header>
 
   <main>
@@ -35,94 +40,81 @@
       <div class="contenedorParra">
         <h2 class="tituloD">Welcome!</h2>
         <p class="primerParr">Learn interesting facts about the athletes who participated.</p>
-         <!-- <img class="fondo-foto" src="img/fondopag.png" alt="fondo">  -->
       </div>
     </section>
 
 
  <section id="Statistics">
-  <div id="inputsCalculos">
-    <h2 class="tituloEstadistica">Statistics and Curisities</h2>
-    <p>Write a country and it will show you the medal or gender statistics</p>
-    <input type="text" placeholder="Write the country" id="country-statistics">
+    <div id="inputsCalculos">
+        <h2 class="tituloEstadistica">Statistics and Curisities</h2>
+        <p>Write a country and it will show you the medal or gender statistics</p>
+        <input type="text" placeholder="Write the country" id="country-statistics">
+        <button id="buscarDatos"> Search</button>
+        <br>
+        <p> What percentage do you want to get?</p>
+        <div class="botones-calculos"> 
+        <button id="calculo-medal"> Medal</button> 
+        <button id="calculo-gender"> Gender</button>
+        </div>
+    </div>
 
-    <button id="buscarDatos"> Search</button>
-      <br>
-      <p> What percentage do you want to get?</p>
-      <div class="botones-calculos"> 
-      <button id="calculo-medal"> Medal</button> 
-      <button id="calculo-gender"> Gender</button>
-      </div>
+    <div class="espacio"></div>
+
+    <div class="graficaCalculo">
+      <!-- Contenedor parrafo -->
+        <div id="contenedorCalculos">  </div>
+      <!-- Graficas -->
+      <div id="chart-container">
+        <canvas id="myChart"></canvas>
+      </div> 
+      <div id="chart-containerOne" >
+        <canvas id="myChartOne"></canvas>
+      </div> 
   </div>
-
-<div class="espacio"></div>
-
-<div class="graficaCalculo">
-  <div id="contenedorCalculos"> 
-    <!-- <div>
-      <canvas id="myChart"></canvas>
-    </div> -->
-  </div>
- 
-
- <div id="chart-container">
-  <canvas id="myChart"></canvas>
-</div> 
-<div id="chart-containerOne" >
-  <canvas id="myChartOne"></canvas>
-</div> 
-</div>
-
 </section> 
 
   
-    <div id="cInput">
-      <h2 class="tituloAtletas">Meet the athletes who participated</h2>
-     <div class="selectores">
-      <input type="text" placeholder="Write the country" id="country" />
-      <select name="gender" id="gender" placeholder="Gender">
-        <option value="">Gender</option>
-        <option value="M">M</option>
-        <option value="F">F</option>
-      </select>
-      <input type="text" placeholder="Write the sport" id="sport" />
-      <select name="medal" id="medal">
-        <option value="">Medal</option>
-        <option value="Gold">Gold</option>
-        <option value="Silver">Silver</option>
-        <option value="Bronze">Bronze</option>
-      </select> 
+  <div id="cInput">
+    <h2 class="tituloAtletas">Meet the athletes who participated</h2>
+    <div class="selectores">
+        <input type="text" placeholder="Write the country" id="country" />
+        <select name="gender" id="gender" placeholder="Gender">
+          <option value="">Gender</option>
+          <option value="M">M</option>
+          <option value="F">F</option>
+        </select>
+        <input type="text" placeholder="Write the sport" id="sport" />
+        <select name="medal" id="medal">
+          <option value="">Medal</option>
+          <option value="Gold">Gold</option>
+          <option value="Silver">Silver</option>
+          <option value="Bronze">Bronze</option>
+        </select> 
     </div>
-      <div class="botones">
-    <button id="filtrarBoton"> Filtrar </button>
-
-    <select id="ordenar"> 
-      <option value=""> Ordenar</option>
-      <option value="menor"> De la A-Z</option>
-      <option value="mayor"> De la Z-A</option>
-    </select>
+    <div class="botones">
+        <button id="filtrarBoton"> Filtrar </button>
+        <select id="ordenar"> 
+          <option value=""> Ordenar</option>
+          <option value="menor"> De la A-Z</option>
+          <option value="mayor"> De la Z-A</option>
+        </select>
+    </div>
   </div>
-    </div>
 
-    <article id="tituloTabla">
+  <article id="tituloTabla">
       <p> Name</p>
       <p> Team</p>
       <p> Gender</p>
       <p> Sport</p>
-      
       <p> Medal</p>
-    </article>
+  </article>
 
-    <section id="atletas">
-      
-    </section>
-    
-  
+  <!-- Lista de atletas -->
+  <section id="atletas">
+  </section>
 
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js" type="module"></script>
-  
-
 </body>
 </html>

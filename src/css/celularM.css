@@ -2,20 +2,19 @@
     display: flex;
     width: 80%;
     flex-flow: row wrap;
-    /* justify-content: center;  */
     justify-content: space-between;
     align-items: center;
-    /* padding: 10px; */
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 10px;
-  }
-  .botones {
+}
+
+.botones {
     display: flex;
     width: 55%;
     flex-flow: row wrap;
     justify-content: space-between;
     padding-top:10px ;
-  }
+}
 
 

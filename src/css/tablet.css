@@ -3,7 +3,8 @@ header{
     width:100% ;
     text-align: center;
     }
- #logo{
+
+#logo{
     height: 40px;
     margin:20px;
 }  
@@ -11,15 +12,14 @@ header{
     display: inline-block; 
     padding: 0 auto;
     text-align: center;
-    color: #134785;
     font-size: 25px;
 }
 #contenido{
     display: grid;
     font-size: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   justify-items: stretch;
-   align-items: center;
+    justify-items: stretch;
+    align-items: center;
     grid-column-gap: 7%;
     grid-row-gap: 30px
 }
