@@ -8,17 +8,16 @@ window.addEventListener("DOMContentLoaded", () => {
   // llamar la funcion de pintado con  todos los atletas
   // pintarAtletas(olymGam.athletes)
   visual(olymGam.athletes);
+  // ordenar sin filtrar
   const inputOrder = document.getElementById("ordenar");
   inputOrder.addEventListener("change", () => {
-    let dataActual = data.athletes;
-    const inputValor = inputOrder.value;
-    dataActual = ordenar(dataActual, inputValor);
+  let dataActual = data.athletes;
+  const inputValor = inputOrder.value;
+  dataActual = ordenar(dataActual, inputValor);
     //console.log(ordenar(dataActual, inputValor));
     //console.log(inputValor);
-    visual(dataActual);
+  visual(dataActual);
   });
-
-  //console.log("loaded");
 });
 
 const botonbuscar = document.getElementById("buscarDatos");
@@ -30,10 +29,8 @@ botonbuscar.addEventListener("click", () => {
 
   botonMedalla.addEventListener("click", () => {
     dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
-    //console.log("hola");
-
     let totalBuscado = dataActualCalcular.length;
-    console.log(dataActualCalcular);
+    // console.log(dataActualCalcular);
     if (totalBuscado === 0) {
       let contenedorCalculo = document.getElementById("contenedorCalculos");
       contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
@@ -55,9 +52,11 @@ botonbuscar.addEventListener("click", () => {
       //console.log(totalBronce);
       let porcentajeBronce = calcularPorcentaje(totalBuscado, totalBronce);
       let contenedorCalculo = document.getElementById("contenedorCalculos");
+
       contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
-    <p>The percentage of gold medals is: ${porcentajeOro}%, the percentage of silver medals is: ${porcentajePlata}%, the percentage of bronze medals is: ${porcentajeBronce}% </p>
-    </div>`;
+      <p>The percentage of gold medals is: ${porcentajeOro}%, the percentage of silver medals is: ${porcentajePlata}%, the percentage of bronze medals is: ${porcentajeBronce}% </p>
+      </div>`;
+
       document.getElementById("chart-container").style.display = "flex";
       document.getElementById("chart-containerOne").style.display = "none";
 
@@ -89,10 +88,9 @@ botonbuscar.addEventListener("click", () => {
 
   botonGenero.addEventListener("click", () => {
     dataActualCalcular = filtrado(dataActualCalcular, inputPais, "team");
-    console.log("hola");
 
     let totalBuscado = dataActualCalcular.length;
-    console.log(totalBuscado);
+    // console.log(totalBuscado);
     if (totalBuscado === 0) {
       let contenedorCalculo = document.getElementById("contenedorCalculos");
       contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
@@ -113,6 +111,7 @@ botonbuscar.addEventListener("click", () => {
       contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
     <p>The percentage of women is: ${porcentajeMujer}%, the percentage of men  is: ${porcentajeHombre}% </p>
     </div>`;
+
       document.getElementById("chart-containerOne").style.display = "flex";
       document.getElementById("chart-container").style.display = "none";
 
@@ -149,7 +148,8 @@ boton.addEventListener("click", () => {
   let dataActual = data.athletes;
   //console.log(dataActual);
 
-  if (inputCountry !== "") {
+  // si se seleccino me ejecuta el filtrado
+  if (inputCountry !== ""){
     dataActual = filtrado(dataActual, inputCountry, "team");
     //console.log(dataActual);
   }
@@ -167,6 +167,7 @@ boton.addEventListener("click", () => {
     //console.log(dataActual);
   }
 
+  // Visualizar el orden
   const inputOrder = document.getElementById("ordenar");
   inputOrder.addEventListener("change", () => {
     const inputValor = inputOrder.value;
@@ -174,31 +175,22 @@ boton.addEventListener("click", () => {
     dataActual = ordenar(dataActual, inputValor);
 
     let contenedor = document.getElementById("atletas");
-    let posicionInicial = 0;
-    let posicionFinal = 2;
     let datosFiltrados = "";
-    for (let i = posicionInicial; i < posicionFinal; i++) {
-      datosFiltrados += `<article id="contenido">
-      <p class="nombre">${dataActual[i].name}</p>
-      <p>  ${dataActual[i].team}</p>
-      <p>  ${dataActual[i].gender}</p>
-      <p>  ${dataActual[i].sport}</p>
-      <p>  ${dataActual[i].medal}</p>
-    </article> <hr>`;
+    for (let cont of dataActual) {
+      datosFiltrados +=
+      `<article id="contenido">
+      <p class="nombre">${cont.name}</p>
+      <p>  ${cont.team}</p>
+      <p>  ${cont.gender}</p>
+      <p>  ${cont.sport}</p>
+      <p>  ${cont.medal}</p>
+      </article> <hr>`;
       contenedor.innerHTML = datosFiltrados;
     }
 
-    //     for (let cont of dataActual) {
-    //       datosFiltrados += `<article id="contenido">
-    //   <p class="nombre">${cont.name}</p>
-    //   <p>  ${cont.team}</p>
-    //   <p>  ${cont.gender}</p>
-    //   <p>  ${cont.sport}</p>
-    //   <p>  ${cont.medal}</p>
-    // </article> <hr>`;
-    //       contenedor.innerHTML = datosFiltrados;
-    //     }
   });
+
+  // Visualizar pero sin ordenar
   let contenedor = document.getElementById("atletas");
   let datosFiltrados = "";
   for (let cont of dataActual) {
@@ -213,39 +205,12 @@ boton.addEventListener("click", () => {
   }
 });
 
-//FUNCION ORDENAR
-
-// const inputOrder = document.getElementById("ordenar");
-// inputOrder.addEventListener("change",()=>{
-//   let dataActual=data.athletes;
-//   const inputValor= inputOrder.value;
-//   dataActual= ordenar(dataActual, inputValor);
-//   console.log(ordenar(dataActual, inputValor));
-//   console.log(inputValor);
-
-// let contenedor=document.getElementById("atletas");
-// let datosFiltrados="";
-// for(let cont of dataActual){
-//   datosFiltrados += `<article id="contenido">
-//   <p>${cont.name}</p>
-//   <p>  ${cont.team}</p>
-//   <p>  ${cont.gender}</p>
-//   <p>  ${cont.sport}</p>
-//   <p>  ${cont.medal}</p>
-//   <hr id="linea">
-
-// </article>`;
-// contenedor.innerHTML= datosFiltrados;
-// }
-
-//});
-
 function visual() {
   let atletasContenedor = document.getElementById("atletas");
   // const todosAtletas = olymGam.athletes;
   const todosAtletas = olymGam.athletes;
   let atletas = "";
-  for (let atleta of todosAtletas) {
+  for (let atleta of todosAtletas){
     // console.log(atleta);
     //   ************ MANIPULACION DINAMICA DEL DOM
     // const p = document.createElement("p");
@@ -261,12 +226,10 @@ function visual() {
         <p>  ${atleta.gender}</p>
         <p>  ${atleta.sport}</p>
         <p>  ${atleta.medal}</p>
-        
-        <img src="" alt="" srcset="">
-      </article>
-      <hr>`;
+        </article>
+        <hr>`;
   }
   atletasContenedor.innerHTML = atletas;
 }
 
-//console.log(filtrado, ordenar, data);
+

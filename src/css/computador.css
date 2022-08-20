@@ -2,30 +2,30 @@ header{
     background-color: rgb(255, 255, 255);
     width:100% ;
     text-align: center;
-    }
+}
+
 #logo{
     height: 40px;
     margin:20px;
 }  
 #tituloPrin{
     display: inline-block; 
-    /* padding: 0 auto; */
     text-align: center;
-    color: #134785;
     font-size: 25px;
     padding-right: 40px;
 }
+
 .tituloD{
     color:var(--Blanco);
     z-index: 1;
     font-size: 25px;
-    }
+}
 
 .primerParr{
     color:var(--Blanco);
     z-index: 1;
     font-size: 17px;
-    }
+}
 
 .tituloAtletas{
     text-align: center;
@@ -60,108 +60,100 @@ header{
     display: flex;
     width: 60%;
     flex-flow: row wrap;
-    /* justify-content: center;  */
     justify-content: space-between;
     align-items: center;
-    /* padding: 10px; */
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 10px;
-  }
-  .botones {
+}
+
+.botones {
     display: flex;
     width: 20%;
     flex-flow: row wrap;
     justify-content: space-between;
     padding-top:10px;
     align-self: center;
-  }
+}
 
-  #Statistics{
+#Statistics{
     background-color: rgb(255, 255, 255);
     height:300px;
     display: flex;
     justify-content: space-around;
     flex-flow: row nowrap;
     margin: 20px;
-   
-   }
+}
 
-   #contenedorCalculos{
-    
+#contenedorCalculos{
     padding-top: 10px;
     font-size:14px;
     font-weight:bolder;
     color: var(--Azul-encabezado);
     text-align: center;
-  }
+}
 
-  #inputsCalculos p{
+#inputsCalculos p{
     color: var(--Azul-encabezado);
-    /* text-align: center; */
     font-size: 19px;
     font-weight: 500;
     margin: 7px 0;
-    /* padding-left: 40px; */
-  }
+}
 
-  .tituloEstadistica{
+.tituloEstadistica{
     text-align: center;
     color: var(--Azul-titulo);
     font-size: 25px;
     margin-bottom: 10px;
     font-weight: bolder;
-  
-  }
+}
 
-  .botones-calculos{
+.botones-calculos{
     display: flex;
     justify-content: space-between;
     width: 50%;
-  }
+}
 
-  #contenedorCalculos{
+#contenedorCalculos{
     padding-top: 10px;
     font-size:19px;
     font-weight:bolder;
     color: var(--Azul-encabezado);
     text-align: center;
-  }
-  #chart-container{
-    display: none;
-    height: 240px;
-    width: 240px;
-    margin: 10px auto;
+}
 
-  }
-  #chart-containerOne{
+#chart-container{
     display: none;
     height: 240px;
     width: 240px;
     margin: 10px auto;
-  }
+}
+
+#chart-containerOne{
+    display: none;
+    height: 240px;
+    width: 240px;
+    margin: 10px auto;
+}
  
 @media(min-width: 1440px) and (max-width: 2000px){
-    .selectores {
-        display: flex;
-        width: 45%;
-        flex-flow: row wrap;
-        /* justify-content: center;  */
-        justify-content: space-between;
-        align-items: center;
-        /* padding: 10px; */
-        margin-left: 10px;
-        margin-right: 10px;
-        padding-top: 10px;
-      }
-      .botones {
-        display: flex;
-        width: 15%;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        padding-top:10px;
-        align-self: center;
-      }
+.selectores {
+  display: flex;
+  width: 45%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+}
 
-     
+.botones {
+  display: flex;
+  width: 15%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top:10px;
+  align-self: center;
+}
 }

@@ -7,7 +7,7 @@ export const filtrado = (data, input, categoria) => {
 
 export const ordenar = (data, inputOr) => {
   let listaOr = "";
-  if (inputOr === "menor") {
+  if (inputOr === "menor"){
     listaOr = data.sort((x, y) => {
       if (x.name < y.name) {
         return -1;
