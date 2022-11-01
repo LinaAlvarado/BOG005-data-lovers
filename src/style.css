@@ -33,6 +33,11 @@ header{
   /* centrar elementos */
   align-items: center; 
 }
+.imagenAros{
+  width: 400px;
+  height: 300px;
+  display: none;
+  }
 
 #logo {
   height:30px;
@@ -65,7 +70,11 @@ header{
   z-index:1;
   font-size:18px;
 }
-
+.inputGrafica{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 .primerParr {
   color: var(--Blanco);
   z-index:1;

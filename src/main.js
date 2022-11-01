@@ -36,6 +36,9 @@ botonbuscar.addEventListener("click", () => {
       contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
       <p>Oops! We do not have that country in the database, try another.</p>
       </div>`;
+      document.getElementById("chart-containerOne").style.display = "none";
+      document.getElementById("chart-container").style.display = "none";
+      document.querySelector(".imagenAros").style.display= "flex";
     } else {
       let dataMedallaOro = filtrado(dataActualCalcular, "Gold", "medal");
       let totalOro = dataMedallaOro.length;
@@ -59,6 +62,7 @@ botonbuscar.addEventListener("click", () => {
 
       document.getElementById("chart-container").style.display = "flex";
       document.getElementById("chart-containerOne").style.display = "none";
+      document.querySelector(".imagenAros").style.display= "none";
 
       let medallas = [porcentajeBronce, porcentajePlata, porcentajeOro];
       const data = {
@@ -96,6 +100,9 @@ botonbuscar.addEventListener("click", () => {
       contenedorCalculo.innerHTML = `<div id="contenedorCalculos">
       <p>Oops! We do not have that country in the database, try another.</p>
       </div>`;
+      document.getElementById("chart-containerOne").style.display = "none";
+      document.getElementById("chart-container").style.display = "none";
+      document.querySelector(".imagenAros").style.display= "flex";
     } else {
       let dataHombre = filtrado(dataActualCalcular, "M", "gender");
       let totalHombre = dataHombre.length;
@@ -114,6 +121,7 @@ botonbuscar.addEventListener("click", () => {
 
       document.getElementById("chart-containerOne").style.display = "flex";
       document.getElementById("chart-container").style.display = "none";
+      document.querySelector(".imagenAros").style.display= "none";
 
       let genero = [porcentajeMujer, porcentajeHombre];
       const data = {
@@ -152,11 +160,25 @@ boton.addEventListener("click", () => {
   if (inputCountry !== ""){
     dataActual = filtrado(dataActual, inputCountry, "team");
     //console.log(dataActual);
-  }
+    if(dataActual.length===0) {
+      
+      let contenedorAtleta = document.getElementById("atletas");
+      contenedorAtleta.innerHTML = `<div>
+      <p class="mensajeErr">Oops! We do not have that country in the database, try another.</p>
+      </div>`;
+    }
+  } 
 
   if (inputSport !== "") {
     dataActual = filtrado(dataActual, inputSport, "sport");
     //console.log(dataActual);
+    if(dataActual.length===0) {
+     
+      let contenedorAtleta = document.getElementById("atletas");
+      contenedorAtleta.innerHTML = `<div>
+      <p class="mensajeErr">Oops! We do not have that sport in the database, try another.</p>
+      </div>`;
+    }
   }
   if (inputGender !== "") {
     dataActual = filtrado(dataActual, inputGender, "gender");
