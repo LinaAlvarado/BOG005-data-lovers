@@ -48,8 +48,12 @@
     <div id="inputsCalculos">
         <h2 class="tituloEstadistica">Statistics and Curisities</h2>
         <p>Write a country and it will show you the medal or gender statistics</p>
-        <input type="text" placeholder="Write the country" id="country-statistics">
-        <button id="buscarDatos"> Search</button>
+    <div class="inputGrafica">
+      <input type="text" placeholder="Write the country" id="country-statistics">
+      <button id="buscarDatos"> Search</button>
+    </div>   
+    
+        
         <br>
         <p> What percentage do you want to get?</p>
         <div class="botones-calculos"> 
@@ -60,10 +64,13 @@
 
     <div class="espacio"></div>
 
+    
+   
     <div class="graficaCalculo">
       <!-- Contenedor parrafo -->
         <div id="contenedorCalculos">  </div>
       <!-- Graficas -->
+      <div class="imagenAros"><img class="imagenAros" src="img/Olympics-logo.png" alt="logo"></div>
       <div id="chart-container">
         <canvas id="myChart"></canvas>
       </div> 

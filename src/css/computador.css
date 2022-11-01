@@ -32,6 +32,15 @@ header{
     padding: 15px;
     font-size: 20px;
 }
+
+.imagenAros{
+width: 400px;
+height: 300px;
+display: flex;
+}
+.mensajeErr{
+    font-size: 20px;
+}
 #contenido{
     display: grid;
     font-size: 18px;
